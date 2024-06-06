@@ -65,6 +65,10 @@ const FileUpload: React.FC = () => {
 		<div>
 			<div className="drag-box" onDragOver={handleDragOver} onDrop={handleDrop}>
 				<p>Drag 'n' drop some files here</p>
+
+				<div className="file-input">
+					<input type="file" multiple onChange={handleFileSelect} />
+				</div>
 				<div>
 					<h3>Files to Upload</h3>
 					<ul className="file-list">
