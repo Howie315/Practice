@@ -1,0 +1,25 @@
+.drag-box {
+	border: 2px dashed #cccccc;
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 2.5vw, 3rem); 
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.5rem); 
+}
+
+.file-list {
+	border-radius: 5px;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	transition: background-color 0.3s ease;
+	list-style-position: inside;
+}
+.file-items {
+	text-align: center;
+}
