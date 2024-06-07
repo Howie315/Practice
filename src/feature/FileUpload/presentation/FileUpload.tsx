@@ -17,7 +17,7 @@ const FileUpload: React.FC = () => {
 		const loadFiles = async () => {
 			try {
 				console.log("Loading initial files from server");
-				const fetchedFiles = await fileRepo.fetchFiles();
+				const fetchedFiles = await fileRepo.fetchFiles(); // fetchFileList
 				setUploadedFiles(fetchedFiles);
 				console.log("Loaded initial files:", fetchedFiles);
 			} catch (error) {
