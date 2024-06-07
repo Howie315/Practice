@@ -30,7 +30,7 @@ export class FileUploadRepoImpl implements FileUploadRepo {
 					"Content-Type": "multipart/form-data",
 				},
 			});
-			const fileEntity: FileEntity = response.data; // Assuming only one file is uploaded at a time
+			const fileEntity: FileEntity = response.data;
 			console.log("Uploaded file entity:", fileEntity);
 			return mapToFileEntityToFile(fileEntity);
 		} catch (error) {

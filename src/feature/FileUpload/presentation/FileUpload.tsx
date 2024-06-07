@@ -5,11 +5,12 @@ import { FileUploadRepoImpl } from "../FileUploadRepo/FileUploadRepoImp";
 import FileUploadItem from "../FileUploadItem/FileUploadItem";
 import "../FileUploadItem/FileUploadItem.css";
 import FileIcon from "../../../imgs/fileIcon.png";
+import { FileUploadRepo } from "../FileUploadRepo/FileUploadRepo";
 
 const FileUpload: React.FC = () => {
 	const [files, setFiles] = useState<File[]>([]);
 	const [uploadedFiles, setUploadedFiles] = useState<FileDomain[]>([]);
-	const fileRepo = new FileUploadRepoImpl();
+	const fileRepo: FileUploadRepo = new FileUploadRepoImpl();
 
 	// Fetch the initial files when the component mounts
 	useEffect(() => {
