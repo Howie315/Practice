@@ -3,6 +3,8 @@ import "./FileUpload.css";
 import { FileDomain } from "../domain/FileDomain";
 import { FileUploadRepoImpl } from "../FileUploadRepo/FileUploadRepoImp";
 import FileUploadItem from "../FileUploadItem/FileUploadItem";
+import "../FileUploadItem/FileUploadItem.css";
+import FileIcon from "../../../imgs/fileIcon.png";
 
 const FileUpload: React.FC = () => {
 	const [files, setFiles] = useState<File[]>([]);
@@ -74,7 +76,8 @@ const FileUpload: React.FC = () => {
 					<h3>Files to Upload</h3>
 					<ul className="file-list">
 						{files.map((file, index) => (
-							<li key={index} className="file-items">
+							<li key={index} className="file-item">
+								<img src={FileIcon} className="img-size" />
 								{file.name}{" "}
 							</li>
 						))}
