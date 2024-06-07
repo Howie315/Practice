@@ -3,9 +3,10 @@ import Practice from "./Practice";
 import "./styles.css";
 
 export default function App() {
-  return (
-    <div className="App">
-      <FileUpload />
-    </div>
-  );
+	return (
+		<div className="App">
+			{/* <FileUpload /> */}
+			<Practice />
+		</div>
+	);
 }

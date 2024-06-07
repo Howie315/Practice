@@ -79,7 +79,7 @@ const FileUpload: React.FC = () => {
 							</li>
 						))}
 					</ul>
-					<button onClick={handleUpload}>Upload Files</button>
+					<button onClick={handleUpload} disabled={files.length === 0}></button>
 				</div>
 			</div>
 

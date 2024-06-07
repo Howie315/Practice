@@ -1,67 +1,62 @@
 import React, { useState } from "react";
 
-const countries = [
-	{
-		id: "1",
-		name: "United States",
-		cities: ["San Francisco", "San Diego", "New York", "Los Angeles"],
-	},
-	{
-		id: "2",
-		name: "Canada",
-		cities: ["Toronto", "Vancouver", "Montreal", "Calgary"],
-	},
-	{
-		id: "3",
-		name: "United Kingdom",
-		cities: ["London", "Manchester", "Birmingham", "Liverpool"],
-	},
-	{
-		id: "4",
-		name: "Australia",
-		cities: ["Sydney", "Melbourne", "Brisbane", "Perth"],
-	},
-	{
-		id: "5",
-		name: "Germany",
-		cities: ["Berlin", "Munich", "Frankfurt", "Hamburg"],
-	},
-];
-
 const Practice = () => {
-	const [selectedCountryId, setSelectedCountryId] = useState("");
+	const [items, setItems] = useState(0);
+	const [lines, setLines] = useState([[10, 5, 2], [], [], [], []]);
 
-	const handleCountryChange = (event: {
-		target: { value: React.SetStateAction<string> };
-	}) => {
-		setSelectedCountryId(event.target.value);
+	const addItemsToLine = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		let lineWithLeast = null;
+		let leastItemsAmount = 1e9;
+		for (let line of lines) {
+			const totalInLine = line.reduce((sum, value) => sum + value);
+			console.log(totalInLine);
+			if (totalInLine <  leastItemsAmount) {
+				lineWithLeast = line;	
+			}
+		}
+
+		// loop through all lines,
+		// find the line with LEAST items
+		// push the items
 	};
-
-	const selectedCountry = countries.find(
-		(country) => country.id === selectedCountryId,
-	);
-
 	return (
-		<div>
-			<select value={selectedCountryId} onChange={handleCountryChange}>
-				<option value="">Select a country</option>
-				{countries.map((country) => (
-					<option key={country.id} value={country.id}>
-						{country.name}
-					</option>
-				))}
-			</select>
+		// <div>
+		// 	<select value={selectedCountryId} onChange={handleCountryChange}>
+		// 		<option value="">Select a country</option>
+		// 		{countries.map((country) => (
+		// 			<option key={country.id} value={country.id}>
+		// 				{country.name}
+		// 			</option>
+		// 		))}
+		// 	</select>
 
-			<select disabled={!selectedCountryId}>
-				<option value="">Select a city</option>
-				{selectedCountry &&
-					selectedCountry.cities.map((city, index) => (
-						<option key={index} value={city}>
-							{city}
-						</option>
-					))}
-			</select>
-		</div>
+		// 	<select disabled={!selectedCountryId}>
+		// 		<option value="">Select a city</option>
+		// 		{selectedCountry &&
+		// 			selectedCountry.cities.map((city, index) => (
+		// 				<option key={index} value={city}>
+		// 					{city}
+		// 				</option>
+		// 			))}
+		// 	</select>
+		// </div>
+		<>
+			<form>
+				<input
+					required
+					type="number"
+					value={items}
+					onChange={(e) => setItems(e.currentTarget.valueAsNumber)}
+				></input>
+				<button> Checkout </button>
+			</form>
+			{lines.map((people, index) => (
+				<div key={index} className="lines">
+					X
+				</div>
+			))}
+		</>
 	);
 };
 
