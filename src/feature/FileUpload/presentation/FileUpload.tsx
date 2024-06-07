@@ -68,12 +68,8 @@ const FileUpload: React.FC = () => {
 		<div>
 			<div className="drag-box" onDragOver={handleDragOver} onDrop={handleDrop}>
 				<p>Drag 'n' drop some files here</p>
-
-				<div className="file-input">
-					<input type="file" multiple onChange={handleFileSelect} />
-				</div>
 				<div>
-					<h3>Files to Upload</h3>
+					<h3 className="header">Files to Upload</h3>
 					<ul className="file-list">
 						{files.map((file, index) => (
 							<li key={index} className="file-item">
@@ -86,8 +82,15 @@ const FileUpload: React.FC = () => {
 				</div>
 			</div>
 
+			<div className="file-input">
+				<input type="file" multiple onChange={handleFileSelect} />
+				<button onClick={handleUpload} className="handle-button">
+					Upload Files
+				</button>
+			</div>
+
 			<div>
-				<h3>Uploaded Files</h3>
+				<h3 className="header">Uploaded Files</h3>
 				<ul className="file-list">
 					{uploadedFiles.map((file, index) => (
 						<FileUploadItem key={index} file={file} />

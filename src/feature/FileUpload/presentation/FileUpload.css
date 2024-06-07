@@ -5,12 +5,8 @@
 	margin-bottom: 20px;
 }
 
-h1 {
+.header {
 	font-size: clamp(1.5rem, 2.5vw, 3rem);
-}
-
-p {
-	font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .file-list {
@@ -25,10 +21,17 @@ p {
 }
 
 @media (max-width: 600px) {
-	.drop-box {
+	.drag-box {
 		display: none;
+	}
+	.handle-button {
+		border-radius: 10px;
+		margin-top: 10px;
 	}
 	.file-input {
 		display: block;
+		display: flex;
+		flex-direction: column;
+		border-radius: 10px;
 	}
 }
