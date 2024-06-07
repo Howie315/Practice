@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./FileUpload.css";
 import { FileDomain } from "../domain/FileDomain";
-import { FileUploadRepoImpl } from "../FIleUploadRepo/FileUploadRepoImp";
+import { FileUploadRepoImpl } from "../FileUploadRepo/FileUploadRepoImp";
+import FileUploadItem from "../FileUploadItem/FileUploadItem";
 
 const FileUpload: React.FC = () => {
 	const [files, setFiles] = useState<File[]>([]);
@@ -86,16 +87,7 @@ const FileUpload: React.FC = () => {
 				<h3>Uploaded Files</h3>
 				<ul className="file-list">
 					{uploadedFiles.map((file, index) => (
-						<li key={index} className="file-items">
-							<a
-								href={file.downloadedURL}
-								target="_blank"
-								rel="noopener noreferrer"
-								download={file.name}
-							>
-								{file.name}
-							</a>
-						</li>
+						<FileUploadItem key={index} file={file} />
 					))}
 				</ul>
 			</div>

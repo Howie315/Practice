@@ -14,15 +14,12 @@ p {
 }
 
 .file-list {
-	border-radius: 5px;
-	padding: 5px 10px;
-	margin-bottom: 10px;
-	transition: background-color 0.3s ease;
-	list-style-position: inside;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Center items horizontally */
+	width: 100%;
 }
-.file-items {
-	text-align: center;
-}
+
 .file-input {
 	display: none;
 }
