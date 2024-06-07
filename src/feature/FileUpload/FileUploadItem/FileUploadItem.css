@@ -1,6 +1,4 @@
 .file-item {
-	border-radius: 8px;
-	border-color: 2px solid black;
 	display: flex;
 	flex-direction: row;
 	align-items: center;

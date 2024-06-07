@@ -23,7 +23,6 @@ export class FileUploadRepoImpl implements FileUploadRepo {
 	async uploadFile(file: File): Promise<FileDomain> {
 		const formData = new FormData();
 		formData.append("files", file);
-
 		try {
 			console.log("Uploading file to:", `${this.baseUrl}/upload`);
 			const response = await axios.post(`${this.baseUrl}/upload`, formData, {
